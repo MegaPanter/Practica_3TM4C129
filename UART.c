@@ -16,12 +16,12 @@ extern void Configurar_UART1(void)
 
     // UART Integer Baud-Rate Divisor (UARTIBRD) pag.914
     /*
-    BRD = 20,000,000 / (16 * 9600) = 130.2
-    UARTFBRD[DIVFRAC] = integer(0.2 * 64 + 0.5) = 14
+    BRD = 25,000,000 / (16 * 57600) = 27.12
+    UARTFBRD[DIVFRAC] = integer(0.12 * 64 + 0.5) = 8.611
     */
-    UART1->IBRD = 130;
+    UART1->IBRD = 27;
     // UART Fractional Baud-Rate Divisor (UARTFBRD) pag.915
-    UART1->FBRD = 14;
+    UART1->FBRD = 9;
     //  UART Line Control (UARTLCRH) pag.916
     UART1->LCRH = (0x3<<5)|(1<<4);
     //  UART Clock Configuration(UARTCC) pag.939
